@@ -22,12 +22,16 @@ public class HelloWorldView extends HorizontalLayout {
 
     public HelloWorldView(GarageService garageService) {
         this.garageService = garageService;
+
         setSizeFull();
         configureGrid();
+        add(historyGrid);
+        historyGrid.setItems(garageService.findAllHistories());
     }
 
     private void configureGrid() {
-        historyGrid.setColumns("brand", "model", "prodYear");
+        historyGrid.setColumns("date","description");
+        historyGrid.addColumn(car -> car.getCar().getBrand()).setHeader("Brand");
     }
 
 }

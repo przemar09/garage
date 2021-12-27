@@ -12,13 +12,10 @@ public class Car extends AbstractEntity{
     @NotEmpty
     private String model ="";
 
-    @NotEmpty
     private String prodYear ="";
 
-    @NotEmpty
     private String vin ="";
 
-    @NotEmpty
     private String engine ="";
 
     public String getBrand() {

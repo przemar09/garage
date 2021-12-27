@@ -1,5 +1,6 @@
 package com.example.application.data.service;
 
+import com.example.application.data.entity.Car;
 import com.example.application.data.entity.History;
 import com.example.application.data.repository.CarRepository;
 import com.example.application.data.repository.HistoryRepository;
@@ -16,6 +17,16 @@ public class GarageService {
     public GarageService(CarRepository carRepository, HistoryRepository historyRepository) {
         this.carRepository = carRepository;
         this.historyRepository = historyRepository;
+
+        Car car = new Car();
+        History history = new History();
+        car.setBrand("Audi");
+        car.setModel("A3");
+        car.setProdYear("2003");
+        carRepository.save(car);
+        history.setCar(car);
+        history.setDescription("Wymiana turbiny");
+        historyRepository.save(history);
     }
 
     public List<History> findAllHistories() {
