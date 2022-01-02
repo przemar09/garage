@@ -33,6 +33,7 @@ public class GarageService {
         return historyRepository.findAll();
     }
 
+
     public void saveHistory(History history) {
         historyRepository.save(history);
     }
