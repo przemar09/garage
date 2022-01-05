@@ -31,7 +31,8 @@ public class HelloWorldView extends HorizontalLayout {
 
     private void configureGrid() {
         historyGrid.setColumns("mileage","description");
-        //historyGrid.addColumn(car -> car.getCar().getBrand()).setHeader("Brand");
+        historyGrid.addColumn(car -> car.getCar().getBrand()).setHeader("Brand");
+        historyGrid.addColumn("date");
     }
 
 }
